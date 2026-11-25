@@ -6,7 +6,7 @@ const T={en:{tag:"timetable → calendar",l1:"Your timetable, one class per line
   days:["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"],empty:"حصصك هتظهر هنا.",e1:"السطر {n} مش مفهوم: ",e2:"اختار بداية ونهاية الترم.",e3:"النهاية قبل البداية.",e4:"ضيف حصة صحيحة واحدة على الأقل.",weeks:"كل أسبوع لحد"}};
 let lang=localStorage.getItem("classcal-lang")||"en";
 const SAMPLE_EN="Sun 09:00-10:30 Data Structures @ Hall 3\nSun 11:00-12:30 Calculus II @ Hall 1\nTue 08:30-10:00 Physics @ Lab B\nWed 10:00-11:30 English @ Room 204\nThu 12:00-13:30 Algorithms @ Hall 3";
-const SAMPLE_AR="الأحد 09:00-10:30 هياكل بيانات @ قاعة 3\nالأحد 11:00-12:30 تفاضل وتكامل @ قاعة 1\nالثلاثاء 08:30-10:00 فيزياء @ معمل ب\nالأربعاء 10:00-11:30 إنجليزي @ غرفة 204\nالخميس 12:00-13:30 خوارزميات @ قاعة 3";
+const SAMPLE_AR="الأحد \u200E09:00-10:30\u200E هياكل بيانات @ قاعة 3\nالأحد \u200E11:00-12:30\u200E تفاضل وتكامل @ قاعة 1\nالثلاثاء \u200E08:30-10:00\u200E فيزياء @ معمل ب\nالأربعاء \u200E10:00-11:30\u200E إنجليزي @ غرفة 204\nالخميس \u200E12:00-13:30\u200E خوارزميات @ قاعة 3";
 function setDefaults(){
   const n=new Date(),iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
   if(!$("start").value)$("start").value=iso(n);

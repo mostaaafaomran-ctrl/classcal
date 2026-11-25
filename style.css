@@ -28,3 +28,4 @@ h2{margin:0 0 10px;font-size:1.1rem}
 .empty{color:#7a98a1}
 footer{text-align:center;font-size:.8rem;color:#5a7a84;margin-top:18px}footer a{color:var(--c)}
 @media(max-width:760px){.grid{grid-template-columns:1fr}}
+time{direction:ltr;unicode-bidi:isolate;display:inline-block;white-space:nowrap}

@@ -8,7 +8,7 @@ const p2=n=>String(n).padStart(2,"0");
 function parseTime(s){const m=s.match(/^(\d{1,2})[:.](\d{2})$/);if(!m)return null;const h=+m[1],mi=+m[2];return h<24&&mi<60?[h,mi]:null}
 function parseLines(text){
   const rows=[],errors=[];
-  digits(text).split(/\r?\n/).forEach((raw,i)=>{
+  digits(text).replace(/[\u200e\u200f\u202a-\u202e\u2066-\u2069]/g,"").split(/\r?\n/).forEach((raw,i)=>{
     const line=raw.trim();if(!line||line.startsWith("#"))return;
     const m=line.match(/^(\S+)\s+(\d{1,2}[:.]\d{2})\s*(?:-|–|—|to|إلى|الى)\s*(\d{1,2}[:.]\d{2})\s+(.+)$/i);
     if(!m){errors.push({line:i+1,text:raw,why:"format"});return}
